@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Morib Tracker",
+  "version": "1.0",
+  "icons": {
+    "16": "logo.png"
+  },
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
